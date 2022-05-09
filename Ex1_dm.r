@@ -26,7 +26,6 @@ nb_voiture_fct <- function(t, type_return) {
   if(type_return == "inter"){
     return(inter)
   }
-  
 }
 
 Dessine_N <- function (t){
@@ -97,7 +96,7 @@ test_quest_ii <- function(n){
 
 #a)
 
-#on prend les arrivée 5,50 500 et 1000 et on compare leur densité de probabilité à une loi gamma censée correspondre
+#on prend les arrivée 2 5 50 et 500 et on compare leur densité de probabilité à une loi gamma censée correspondre
 compare_loi_gamma <- function(){
   A2 <- c()
   A5 <- c()
@@ -158,10 +157,10 @@ compare_loi_gamma <- function(){
 #b)
 
 #verifie que les interval inter-arrivée vérifie une loi uniforme quand on connait le nombre totale d'arrivée
-verif_uniforme <- function(t){
+verif_uniforme <- function(n){
   arrivee <- c()
   index <- 0
-  for (i in 1:t) {
+  for (i in 1:n) {
     tab = unlist(nb_voiture_fct(60,"duree"))
     if (length(tab)==20){
       arrivee <- c(arrivee,tab)
